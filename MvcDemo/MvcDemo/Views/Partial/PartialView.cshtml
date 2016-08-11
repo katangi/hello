@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MvcDemo.Models.Partial>
+   
+@if (Model != null)
+{
+    <div class="grid">
+        <table cellspacing="0" width="80px">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Address
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+             
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td align="left">
+                            @item.Name
+                        </td>
+                        <td align="left">
+                            @item.Age
+                        </td>
+                        <td align="left">
+                            @item.Address
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+}

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/themes/css/bootstrappage.css" rel="stylesheet" />
+            <link href="~/themes/css/main.css" rel="stylesheet" />
+        <link rel="stylesheet"
+              href="@Url.Content("~/Content/Site.css")" />
+
+    </head>
+    <body>
+
+        <header>
+            <div class="content-wrapper">
+
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li>
+                                @Html.ActionLink("Home",
+                                "Index", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("About",
+                                "About", "Home")
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </header>
+         
+        <div  class="container" >
+            @RenderBody()
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-right" >
+                    <p> @DateTime.Now.Date </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
+
+
+
+

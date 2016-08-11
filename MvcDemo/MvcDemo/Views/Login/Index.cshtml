@@ -1,0 +1,43 @@
+﻿@model MvcDemo.Areas.Customer.Models.Customer
+
+
+
+    
+
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            @*@Html.HiddenFor(model => model.Id)*@
+            <table cellpadding="10">
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Name)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Name)
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Id)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Id)
+                        @Html.ValidationMessageFor(m => m.Id)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <button class="btn btn-small btn-success" style="color:white;" type="submit" value="Submit">Submit</button>
+                        @*@Html.ActionLink("Go To Index", "Index", "Customer", new { area = "Customer" }, new { @class = "btn btn-small btn-success" })*@
+                    </td>
+                    <td colspan="2" style="text-align: center"></td>
+                </tr>
+            </table>
+
+        }
+
+ 

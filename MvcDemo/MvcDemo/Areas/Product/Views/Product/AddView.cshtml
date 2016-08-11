@@ -1,0 +1,82 @@
+﻿@model  MvcDemo.Areas.Product.Models.Product
+@{
+    ViewBag.Title = "AddView";
+
+}
+
+<h2>AddView</h2>
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<div class="container">
+    @*<div class="modal fade" id="myModal" role="dialog">*@
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+
+                    @Html.HiddenFor(model => model.Id)
+                    @using (Html.BeginForm("MyProduct", "Product", new { area = "Product" }, FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+                <table cellpadding="10">
+
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.Name)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Name)
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.Description)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Description)
+                            @Html.ValidationMessageFor(m => m.Description)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.price)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.price)
+                            @Html.ValidationMessageFor(m => m.price)
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td colspan="2" style="text-align: center">
+                            <button class="btn btn-small btn-success" style="color:white;" type="submit" value="Submit">Submit</button>
+                            @Html.ActionLink("Go To Index", "Index", "Customer", new { area = "Customer" }, new { @class = "btn btn-small btn-success" })
+                        </td>
+                        <td colspan="2" style="text-align: center"></td>
+                    </tr>
+                </table>
+
+                }
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+
+        </div>
+    @*</div>*@
+    </div>

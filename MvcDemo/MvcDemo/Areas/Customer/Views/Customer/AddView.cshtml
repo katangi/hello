@@ -1,0 +1,61 @@
+﻿@model  MvcDemo.Areas.Customer.Models.Customer
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Customer</h2>
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<div class="container-fluid">
+    <div class="divcustomer">
+        @Html.HiddenFor(model => model.Id)
+        @using (Html.BeginForm("MyCustomer", "Customer", new { area = "Customer" }, FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+            <table cellpadding="10">
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Name)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Name)
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.PhoneNo)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.PhoneNo)
+                        @Html.ValidationMessageFor(m => m.PhoneNo)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Address)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Address)
+                        @Html.ValidationMessageFor(m => m.Address)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <button class="btn btn-small btn-success" style="color:white;" type="submit" value="Submit">Submit</button>
+                        @Html.ActionLink("Go To Index", "Index", "Customer", new { area = "Customer" }, new { @class = "btn btn-small btn-success" })
+                    </td>
+                    <td colspan="2" style="text-align: center"></td>
+                </tr>
+            </table>
+
+        }
+
+    </div>
+    </div>

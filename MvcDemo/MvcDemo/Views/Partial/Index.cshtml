@@ -1,0 +1,14 @@
+﻿@model MvcDemo.Models.Partial
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+
+    <div>
+        @Html.Partial("PartialView", Model.partialModel)
+
+    </div>
+</p>
